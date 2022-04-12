@@ -1,13 +1,12 @@
 version: '3'
 
 services:
-###> doctrine/doctrine-bundle ###
   php-apache:
     build: ./docker/
     volumes:
       - ./:/var/www/html/
     ports:
-      - 8000:80
+      - "80:80"
 
   database:
     container_name: mysql_db
@@ -19,10 +18,7 @@ services:
       MYSQL_USER: MYSQL_USER
       MYSQL_PASSWORD: MYSQL_PASSWORD
     ports:
-      - "9906:3306"
-###< doctrine/doctrine-bundle ###
+      - "3306:3306"
 
 volumes:
-###> doctrine/doctrine-bundle ###
   db-data:
-###< doctrine/doctrine-bundle ###

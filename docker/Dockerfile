@@ -1,6 +1,6 @@
 FROM php:7.3.22-apache
 
-RUN chmod -R 733 .
+RUN a2enmod rewrite
 
 #RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 #RUN apt-get update && apt-get upgrade -y
